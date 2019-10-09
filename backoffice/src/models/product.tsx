@@ -17,7 +17,9 @@ import {
   BooleanField, 
   BooleanInput, 
   Filter,
-  NumberInput
+  NumberInput,
+  ImageInput, 
+  ImageField
 } from "react-admin";
 
 
@@ -37,6 +39,9 @@ export const ProductEdit = (props: any) => (
       <ReferenceInput label="Rubro" source="rubro_id" reference="product-type">
             <SelectInput optionText="name" />
         </ReferenceInput>
+        <ImageInput multiple source="pictures" label="Related pictures" accept="image/*">
+        <ImageField source="src" title="title" />
+    </ImageInput>
     </SimpleForm>
   </Edit>
 );
@@ -46,6 +51,9 @@ export const ProductCreate = (props: any) => (
     <SimpleForm>
       <TextInput fullWidth source="name" /> 
       <NumberInput fullWidth source="price" /> 
+      <ImageInput multiple source="pictures" label="Related pictures" accept="image/*">
+        <ImageField source="src" title="title" />
+    </ImageInput>
       <ReferenceInput label="Rubro" source="rubro_id" reference="product-type">
             <SelectInput optionText="name" />
         </ReferenceInput>
