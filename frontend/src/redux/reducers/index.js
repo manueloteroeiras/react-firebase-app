@@ -1,5 +1,6 @@
 const initialState = {
   users: [], 
+  filers:  [], 
   productTypes: [], 
   products: [], 
   status: 'INIT',
@@ -36,6 +37,12 @@ export default (state = initialState, action = {}) => {
     };
 
     case "ADD_USER":
+    return {
+        ...state,
+        users : [...state.users, ...[action.payload]]
+    };
+
+    case "SET_FILTER":
     return {
         ...state,
         users : [...state.users, ...[action.payload]]

@@ -65,6 +65,8 @@ export const buyProduct = (product) => {
     sellsCollection.add({
       product, 
       date: new Date().getTime()
+    }).then(() => {
+      alert('Ha comprado el producto')
     })
   }
 }
